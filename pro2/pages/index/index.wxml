@@ -1,0 +1,65 @@
+<view wx:for="{{messageArray}}">
+  <view class="item">
+    <view class="item-left">
+      <image src='{{item.userPic}}'></image>
+    </view>
+    <view class="item-right">
+      <view class="item-name">{{item.userName}}</view>
+      <view class="item-content">{{item.content}}</view>
+      <view class="item-location" wx:if="{{item.address}}"> {{item.address}} </view>
+
+      <view class="item-right-bottom">
+        <view class="item-right-bottom-time">{{item.day}}</view>
+        <view class="item-right-bottom-from" wx:if="{{item.from}}"> {{item.from}} </view>
+
+        <view class="item-right-bottom-action">
+        
+          <view class='{{ahide==item.id?"":"hidden"}}' animation="{{animationData}}">
+            <view class="item-right-bottom-action-tc" >
+                <view class="item-right-bottom-action-tc-left item-right-bottom-action-tc-view">
+                  <image src='/images/action-w.png'></image>
+                  <view class="item-right-bottom-action-tc-left-wz"> 评论</view>
+                </view>
+                
+                <view class="item-right-bottom-action-tc-right item-right-bottom-action-tc-view">
+                  <image src='/images/zan-w.png'></image>
+                  <view class="item-right-bottom-action-tc-left-wz"> 赞</view>
+                </view>
+            </view>
+            <view class="item-right-bottom-action-arrow"></view>
+          </view>
+          <view class="item-right-bottom-action-pic" bindtap='showdialog' data-ids='{{item.id}}'  >
+              <image src='/images/action.png' ></image>
+          </view>
+        </view>
+
+      </view>
+
+      <view class="comments">
+        <label wx:if="{{item.zanname}}">
+          <view class="comments-zan">
+            <view  class="comments-zan-img">
+              <image  src='/images/zan.png'></image>
+            </view>
+            <text>{{item.zanname}}觉的很赞</text>
+          </view>
+        </label>
+
+        <label wx:if="{{item.zanname && item.comments}}">
+         <view class="comments-bar"></view>
+        </label>
+
+        <label wx:if="{{item.comments}}">
+          <label wx:for="{{item.comments}}">
+            <label wx:if="{{item.fromUserId==item.toUserId}}">
+              <view class="comments-pl">{{item.fromUserName}}：{{item.content}}</view>
+            </label>
+            <label  wx:else>
+              <view class="comments-pl">{{item.fromUserName}} 回复 {{item.toUserName}}：{{item.content}}</view>
+            </label>
+          </label>
+        </label>
+      </view>
+    </view>
+  </view>
+</view>
