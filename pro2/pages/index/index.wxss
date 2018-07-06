@@ -16,7 +16,7 @@
   height: 100rpx;
   background-color: #eeeeee;
   margin-top: 20rpx;
-  margin-left: 25rpx;
+  margin-left: 24rpx;
 }
 .item-right{
   float:left;

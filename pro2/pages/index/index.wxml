@@ -41,7 +41,7 @@
             <view  class="comments-zan-img">
               <image  src='/images/zan.png'></image>
             </view>
-            <text>{{item.zanname}}觉的很赞</text>
+            <text>{{item.zanname}}觉的很赞哦</text>
           </view>
         </label>
 
