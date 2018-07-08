@@ -14,7 +14,7 @@
 
         <view class="item-right-bottom-action">
         
-          <view class='{{ahide==item.id?"":"hidden"}}' animation="{{animationData}}">
+          <view class='{{ahide==item.id?"showd":"hidden"}}' animation="{{animationData}}">
             <view class="item-right-bottom-action-tc" >
                 <view class="item-right-bottom-action-tc-left item-right-bottom-action-tc-view">
                   <image src='/images/action-w.png'></image>
@@ -23,7 +23,7 @@
                 
                 <view class="item-right-bottom-action-tc-right item-right-bottom-action-tc-view">
                   <image src='/images/zan-w.png'></image>
-                  <view class="item-right-bottom-action-tc-left-wz"> 赞</view>
+                  <view class="item-right-bottom-action-tc-left-wz" bindtap='dianzan' data-ids='{{item.id}}'> 赞</view>
                 </view>
             </view>
             <view class="item-right-bottom-action-arrow"></view>
@@ -41,7 +41,7 @@
             <view  class="comments-zan-img">
               <image  src='/images/zan.png'></image>
             </view>
-            <text>{{item.zanname}}觉的很赞哦</text>
+            <text>{{item.zanname}}觉的很赞</text>
           </view>
         </label>
 
